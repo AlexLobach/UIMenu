@@ -1,5 +1,6 @@
 using DG.Tweening;
 using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using UnityEngine;
@@ -9,6 +10,7 @@ public abstract class UIScreen : MonoBehaviour
 {
     private Image[] allTargetGraphic;
     private bool canAnimate = true;
+    private Color [] overrideColor;
 
     public float animationDuration = 0.3f;
 
@@ -25,15 +27,8 @@ public abstract class UIScreen : MonoBehaviour
     public abstract void SetupScreen(UIScreen previousScreen);
 
     public virtual void StartScreen()
-    {
-        Color baseColor = new Color(209, 202, 55, 255);
-
-        gameObject.SetActive(true);
-
-        foreach (var item in allTargetGraphic)
-        {
-            item.color = baseColor;
-        }
+    {        
+        gameObject.SetActive(true);        
 
         foreach (var item in allTargetGraphic)
         {
