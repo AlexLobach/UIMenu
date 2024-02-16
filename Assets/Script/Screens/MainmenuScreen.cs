@@ -15,7 +15,7 @@ public class MainmenuScreen : UIScreen
 
     public override void StartScreen()
     {
-        base.StartScreen();
+        base.StartScreen();        
 
         startGame.AddListener(OpenGame);
         shop.AddListener(OpenShop);

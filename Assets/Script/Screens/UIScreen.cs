@@ -10,7 +10,7 @@ public abstract class UIScreen : MonoBehaviour
 {
     private Image[] allTargetGraphic;
     private bool canAnimate = true;
-    private Color [] overrideColor;
+    
 
     public float animationDuration = 0.3f;
 

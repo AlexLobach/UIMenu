@@ -10,6 +10,7 @@ public class GameScreen : UIScreen
 
     public override void SetupScreen(UIScreen previousScreen)
     {
+        
         if (menuScreen == null)
             menuScreen = previousScreen;
 
