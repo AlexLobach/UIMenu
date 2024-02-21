@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor.SceneManagement;
@@ -28,22 +29,16 @@ public class Store : MonoBehaviour
         }
         foreach (var item in nameGameObject)
         {
-
+            //Image obj = Instantiate(item.Value);
+            //gameObject.SetActive(true);
+            item.Value.DOFade(1, 0.3f);
             string simpleStr = item.Key;
-            //string colorStr = item.
+            
             Debug.Log($"{simpleStr}");
-            //item.Value.enabled = true;
+            
         }
     }
-    void Update()
-    {
-        
-        foreach (var item in nameGameObject)
-        {
-            GameObject obj = Instantiate(item, transform.parent, transform.parent,);
-        }
-        
-    }
+    
     
 
     
