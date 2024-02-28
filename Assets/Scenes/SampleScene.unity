@@ -1851,6 +1851,7 @@ GameObject:
   - component: {fileID: 1125519508}
   - component: {fileID: 1125519512}
   - component: {fileID: 1125519510}
+  - component: {fileID: 1125519514}
   - component: {fileID: 1125519513}
   - component: {fileID: 1125519509}
   m_Layer: 5
@@ -1940,7 +1941,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1125519507}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1270b098b00acf94a90d3aa7c28727ae, type: 3}
   m_Name: 
@@ -1970,6 +1971,51 @@ MonoBehaviour:
   - image: {fileID: 1108855291, guid: 1f4fc042c19ff884d9fb93c3dad76350, type: 3}
     price: 200
     isPurchased: 0
+  shopScrollView: {fileID: 605867321}
+  coinsText: {fileID: 1842628872}
+--- !u!114 &1125519514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1125519507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c4c68ce4321bca4baa51cd129338ed4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shopItemsSO:
+  - {fileID: 11400000, guid: 5209e5947fcf9644db07d8804813ddc5, type: 2}
+  - {fileID: 11400000, guid: c93e75396ad60f54c805df124c912316, type: 2}
+  - {fileID: 11400000, guid: c13a7e6c32dc36142a9cc76e7b539779, type: 2}
+  - {fileID: 11400000, guid: 80e8a912ee4dc264fbdf755c89a25ecd, type: 2}
+  - {fileID: 11400000, guid: bf06a0aa9602b2d4cab5704049f89e92, type: 2}
+  - {fileID: 11400000, guid: 3cd03fa486624f14fb378fd687b26a4e, type: 2}
+  - {fileID: 11400000, guid: c03ace301b8cde844a9659ccc9c29e60, type: 2}
+  - {fileID: 11400000, guid: bcd542bdeff0fb5439e58647ca5069fd, type: 2}
+  - {fileID: 11400000, guid: a17f67e2bc088df4cb1e017676959dea, type: 2}
+  - {fileID: 11400000, guid: 5dd83dc80dd4e8b4f8bd7efa0d04db39, type: 2}
+  - {fileID: 11400000, guid: 5209e5947fcf9644db07d8804813ddc5, type: 2}
+  - {fileID: 11400000, guid: c93e75396ad60f54c805df124c912316, type: 2}
+  - {fileID: 11400000, guid: c13a7e6c32dc36142a9cc76e7b539779, type: 2}
+  - {fileID: 11400000, guid: 80e8a912ee4dc264fbdf755c89a25ecd, type: 2}
+  - {fileID: 11400000, guid: bf06a0aa9602b2d4cab5704049f89e92, type: 2}
+  - {fileID: 11400000, guid: 3cd03fa486624f14fb378fd687b26a4e, type: 2}
+  - {fileID: 11400000, guid: c03ace301b8cde844a9659ccc9c29e60, type: 2}
+  - {fileID: 11400000, guid: bcd542bdeff0fb5439e58647ca5069fd, type: 2}
+  - {fileID: 11400000, guid: a17f67e2bc088df4cb1e017676959dea, type: 2}
+  - {fileID: 11400000, guid: 5dd83dc80dd4e8b4f8bd7efa0d04db39, type: 2}
+  - {fileID: 11400000, guid: 5209e5947fcf9644db07d8804813ddc5, type: 2}
+  - {fileID: 11400000, guid: c93e75396ad60f54c805df124c912316, type: 2}
+  - {fileID: 11400000, guid: c13a7e6c32dc36142a9cc76e7b539779, type: 2}
+  - {fileID: 11400000, guid: 80e8a912ee4dc264fbdf755c89a25ecd, type: 2}
+  - {fileID: 11400000, guid: bf06a0aa9602b2d4cab5704049f89e92, type: 2}
+  - {fileID: 11400000, guid: 3cd03fa486624f14fb378fd687b26a4e, type: 2}
+  - {fileID: 11400000, guid: c03ace301b8cde844a9659ccc9c29e60, type: 2}
+  - {fileID: 11400000, guid: bcd542bdeff0fb5439e58647ca5069fd, type: 2}
+  - {fileID: 11400000, guid: a17f67e2bc088df4cb1e017676959dea, type: 2}
+  - {fileID: 11400000, guid: 5dd83dc80dd4e8b4f8bd7efa0d04db39, type: 2}
   shopScrollView: {fileID: 605867321}
   coinsText: {fileID: 1842628872}
 --- !u!1 &1142899500
