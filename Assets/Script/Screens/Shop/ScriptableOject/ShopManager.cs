@@ -1,36 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
+using TMPro;
 using UnityEngine.UI;
 
-public class SroreScript : MonoBehaviour
+public class ShopManager : MonoBehaviour
 {
-    [System.Serializable] class ShopItem
-    {
-        public Sprite image;
-        public int price;
-        public bool isPurchased = false;
-    }
-    [SerializeField] List<ShopItem> shopItemsList;
+    [SerializeField] private SOItem[] shopItemsSO;
+    //[SerializeField] private ShopTemplate[] shopPanels;
     private GameObject itemTemplate;
     private GameObject go;
     [SerializeField] Transform shopScrollView;
-    [SerializeField] TextMeshProUGUI coinsText;
+    [SerializeField] TMP_Text coinsText;
     private Button buyBtn;
 
     void Start()
     {
         itemTemplate = shopScrollView.GetChild(0).gameObject;
 
-        int len = shopItemsList.Count;
+        int len = shopItemsSO.Length;
         for(int i=0; i<len; i++)
         {
             go = Instantiate(itemTemplate, shopScrollView);
-            go.transform.GetChild(0).GetComponent<Image>().sprite = shopItemsList[i].image;
-            go.transform.GetChild(1).GetChild(0).GetComponent<TextMeshProUGUI>().text = shopItemsList[i].price.ToString();
+            go.transform.GetChild(0).GetComponent<Image>().sprite = shopItemsSO[i].Icon;
+            go.transform.GetChild(1).GetChild(0).GetComponent<TMP_Text>().text = shopItemsSO[i].Price.ToString();
             buyBtn = go.transform.GetChild(2).GetComponent<Button>();
-            buyBtn.interactable = !shopItemsList[i].isPurchased;
+            buyBtn.interactable = !shopItemsSO[i].isPurchased;
             buyBtn.AddEventListener(i, OnShopItemClicked);
 
         }
@@ -39,11 +34,11 @@ public class SroreScript : MonoBehaviour
     }
     void OnShopItemClicked (int itemIndex)
     {
-        if (Coins.Instance.HasEnoughCoins(shopItemsList[itemIndex].price))
+        if (Coins.Instance.HasEnoughCoins(shopItemsSO[itemIndex].Price))
         {
-            Coins.Instance.UseCoins(shopItemsList[itemIndex].price);
+            Coins.Instance.UseCoins(shopItemsSO[itemIndex].Price);
             //purchase Item
-            shopItemsList[itemIndex].isPurchased = true;
+            shopItemsSO[itemIndex].isPurchased = true;
             buyBtn = shopScrollView.GetChild(itemIndex).GetChild(2).GetComponent<Button>();        
             // disable the button
             buyBtn.interactable = false;
@@ -56,10 +51,10 @@ public class SroreScript : MonoBehaviour
         }
         
     }
+    
     void SetCoinsUI()
     {
         
         coinsText.text = Coins.Instance.coins.ToString();
     }
-
 }
