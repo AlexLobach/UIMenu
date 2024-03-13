@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
+    private const string HorizontalAxisName = "Horizontal";
+    private const string VerticalAxisName = "Vertical";
     private Animator animator;
+    private Vector2 InputDirection;
+    private const string MoveForwardHash = "MoveValue";
+    private const string MoveStrafeHash = "StrafeValue";
 
     void Awake()
     {
@@ -13,14 +18,11 @@ public class PlayerMove : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.W))
-        {
-            Debug.Log("GOOOOOOOOOOOOOOOOOOOOOO");
-            animator.SetBool("IsWalk", true);
-        }
-        if (Input.GetKeyUp(KeyCode.W))
-        {
-            animator.SetBool("IsWalk", false);
-        }
+        InputDirection = new Vector2(Input.GetAxis(HorizontalAxisName), Input.GetAxis(VerticalAxisName));
+        
+        if (Input.GetKey(KeyCode.LeftShift))InputDirection.y += 1;
+        
+        animator.SetFloat(MoveForwardHash, InputDirection.y);
+        animator.SetFloat(MoveStrafeHash, InputDirection.x);
     }
 }
