@@ -697,6 +697,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 833121163}
+  - {fileID: 1476389508}
   m_Father: {fileID: 288724336}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1044,7 +1045,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.27996826, y: 135.69885}
+  m_AnchoredPosition: {x: -0.2800293, y: 135.69897}
   m_SizeDelta: {x: 2.6999512, y: 182.8679}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &605867320
@@ -1851,6 +1852,7 @@ GameObject:
   - component: {fileID: 1125519508}
   - component: {fileID: 1125519512}
   - component: {fileID: 1125519510}
+  - component: {fileID: 1125519514}
   - component: {fileID: 1125519513}
   - component: {fileID: 1125519509}
   m_Layer: 5
@@ -1940,7 +1942,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1125519507}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1270b098b00acf94a90d3aa7c28727ae, type: 3}
   m_Name: 
@@ -1970,6 +1972,51 @@ MonoBehaviour:
   - image: {fileID: 1108855291, guid: 1f4fc042c19ff884d9fb93c3dad76350, type: 3}
     price: 200
     isPurchased: 0
+  shopScrollView: {fileID: 605867321}
+  coinsText: {fileID: 1842628872}
+--- !u!114 &1125519514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1125519507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c4c68ce4321bca4baa51cd129338ed4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shopItemsSO:
+  - {fileID: 11400000, guid: 5209e5947fcf9644db07d8804813ddc5, type: 2}
+  - {fileID: 11400000, guid: c93e75396ad60f54c805df124c912316, type: 2}
+  - {fileID: 11400000, guid: c13a7e6c32dc36142a9cc76e7b539779, type: 2}
+  - {fileID: 11400000, guid: 80e8a912ee4dc264fbdf755c89a25ecd, type: 2}
+  - {fileID: 11400000, guid: bf06a0aa9602b2d4cab5704049f89e92, type: 2}
+  - {fileID: 11400000, guid: 3cd03fa486624f14fb378fd687b26a4e, type: 2}
+  - {fileID: 11400000, guid: c03ace301b8cde844a9659ccc9c29e60, type: 2}
+  - {fileID: 11400000, guid: bcd542bdeff0fb5439e58647ca5069fd, type: 2}
+  - {fileID: 11400000, guid: a17f67e2bc088df4cb1e017676959dea, type: 2}
+  - {fileID: 11400000, guid: 5dd83dc80dd4e8b4f8bd7efa0d04db39, type: 2}
+  - {fileID: 11400000, guid: 5209e5947fcf9644db07d8804813ddc5, type: 2}
+  - {fileID: 11400000, guid: c93e75396ad60f54c805df124c912316, type: 2}
+  - {fileID: 11400000, guid: c13a7e6c32dc36142a9cc76e7b539779, type: 2}
+  - {fileID: 11400000, guid: 80e8a912ee4dc264fbdf755c89a25ecd, type: 2}
+  - {fileID: 11400000, guid: bf06a0aa9602b2d4cab5704049f89e92, type: 2}
+  - {fileID: 11400000, guid: 3cd03fa486624f14fb378fd687b26a4e, type: 2}
+  - {fileID: 11400000, guid: c03ace301b8cde844a9659ccc9c29e60, type: 2}
+  - {fileID: 11400000, guid: bcd542bdeff0fb5439e58647ca5069fd, type: 2}
+  - {fileID: 11400000, guid: a17f67e2bc088df4cb1e017676959dea, type: 2}
+  - {fileID: 11400000, guid: 5dd83dc80dd4e8b4f8bd7efa0d04db39, type: 2}
+  - {fileID: 11400000, guid: 5209e5947fcf9644db07d8804813ddc5, type: 2}
+  - {fileID: 11400000, guid: c93e75396ad60f54c805df124c912316, type: 2}
+  - {fileID: 11400000, guid: c13a7e6c32dc36142a9cc76e7b539779, type: 2}
+  - {fileID: 11400000, guid: 80e8a912ee4dc264fbdf755c89a25ecd, type: 2}
+  - {fileID: 11400000, guid: bf06a0aa9602b2d4cab5704049f89e92, type: 2}
+  - {fileID: 11400000, guid: 3cd03fa486624f14fb378fd687b26a4e, type: 2}
+  - {fileID: 11400000, guid: c03ace301b8cde844a9659ccc9c29e60, type: 2}
+  - {fileID: 11400000, guid: bcd542bdeff0fb5439e58647ca5069fd, type: 2}
+  - {fileID: 11400000, guid: a17f67e2bc088df4cb1e017676959dea, type: 2}
+  - {fileID: 11400000, guid: 5dd83dc80dd4e8b4f8bd7efa0d04db39, type: 2}
   shopScrollView: {fileID: 605867321}
   coinsText: {fileID: 1842628872}
 --- !u!1 &1142899500
@@ -2814,6 +2861,42 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1424512971}
   m_CullTransparentMesh: 0
+--- !u!1 &1476389507
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1476389508}
+  m_Layer: 5
+  m_Name: GameScrean
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1476389508
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1476389507}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 320944897}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1477463911
 GameObject:
   m_ObjectHideFlags: 0
@@ -3241,7 +3324,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0c8a38f5a5358d4ca1143fe19baee85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coins: 1000
+  coins: 200
 --- !u!4 &1818749148
 Transform:
   m_ObjectHideFlags: 0

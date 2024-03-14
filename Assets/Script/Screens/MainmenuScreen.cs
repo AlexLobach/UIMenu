@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainmenuScreen : UIScreen
 {
@@ -6,6 +7,7 @@ public class MainmenuScreen : UIScreen
     [SerializeField] private UIScreen gameScreen;
     [SerializeField] private UIScreen shopScreen;
     [SerializeField] private UIScreen optionsScreen;
+    
 
 
     public override void SetupScreen(UIScreen previousScreen)
@@ -25,9 +27,10 @@ public class MainmenuScreen : UIScreen
     void OpenGame()
     {
         Debug.Log("Game");
-        gameScreen.SetupScreen(this);
-        CloseScreen();
-        gameScreen.StartScreen();
+        //gameScreen.SetupScreen(this);
+        //CloseScreen();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        //gameScreen.StartScreen();
     }
 
     void OpenShop()

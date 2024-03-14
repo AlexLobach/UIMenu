@@ -58,6 +58,7 @@ public class SroreScript : MonoBehaviour
     }
     void SetCoinsUI()
     {
+        
         coinsText.text = Coins.Instance.coins.ToString();
     }
 
