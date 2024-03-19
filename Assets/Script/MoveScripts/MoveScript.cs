@@ -5,10 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class MoveScript : MonoBehaviour
 
-//ести на плеере будет отсутствовать компонент Rigidbody
-//эта строчка гарантирует что наш скрипт не завалится 
-
 {
+    public ParticleSystem[] dusts;
     public float Speed = 10f;
     public float JumpForce = 300f;
 
@@ -19,28 +17,29 @@ public class MoveScript : MonoBehaviour
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
-    }
-
-    // обратите внимание что все действия с физикой 
-    // необходимо обрабатывать в FixedUpdate, а не в Update
+    }    
     void FixedUpdate()
     {
-        MovementLogic();
+        MovementLogic();        
         JumpLogic();
     }
 
     private void MovementLogic()
     {
+                    
         float moveHorizontal = Input.GetAxis("Horizontal");
-
         float moveVertical = Input.GetAxis("Vertical");
-
         Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
         if (Input.GetKey(KeyCode.LeftShift))
         {
             _rb.AddForce(movement * (Speed * 3));
         }
-        else _rb.AddForce(movement * Speed);
+        else
+        {
+            _rb.AddForce(movement * Speed);
+            
+        }
+    
     }
 
     private void JumpLogic()
@@ -49,31 +48,41 @@ public class MoveScript : MonoBehaviour
         {
             if (_isGrounded)
             {
-                _rb.AddForce(Vector3.up * JumpForce);
-
-                // Обратите внимание что я делаю на основе Vector3.up 
-                // а не на основе transform.up. Если персонаж упал или 
-                // если персонаж -- шар, то его личный "верх" может 
-                // любое направление. Влево, вправо, вниз...
-                // Но нам нужен скачек только в абсолютный вверх, 
-                // потому и Vector3.up
+                _rb.AddForce(transform.up * JumpForce);                
             }
         }
     }
 
     void OnCollisionEnter(Collision collision)
     {
-        IsGroundedUpate(collision, true);
+        IsGroundedUpdate(collision, true);
+        Debug.Log("On the Ground");
+        CreateDust();
+               
+    
     }
 
     void OnCollisionExit(Collision collision)
     {
-        IsGroundedUpate(collision, false);
+        IsGroundedUpdate(collision, false);
+        Debug.Log("Out the Ground");
     }
 
-    private void IsGroundedUpate(Collision collision, bool value)
-    {
-        _isGrounded = value;
+    private void IsGroundedUpdate(Collision collision, bool value)
+    {        
+        if (collision.gameObject.tag == ("Ground"))
+        {
+            _isGrounded = value;
+           
+        }
         
     }
+    void CreateDust()
+    {
+        foreach(var dust in dusts) {
+            dust.Play();            
+        }              
+    }
+
+
 }
